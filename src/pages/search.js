@@ -5,16 +5,18 @@ function Search() {
   return (
     <div className='page'>
 
-        <h1>Search</h1>
+        <h2>Search</h2>
 
-        <div id='input'>
-            <input id='inputField'></input>
-            <button id='inputButton'>Search</button>
-        </div>
-        
-        <div className='books'>
+        <div className='searchBooks'>
+
+            <div id='input'>
+                <input id='inputField'></input>
+                <button id='inputButton'>Search</button>
+            </div>
+
             <SearchedBook/>
             <SearchedBook/>
+
         </div>
         
     </div>

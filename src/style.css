@@ -23,7 +23,7 @@
     border-color: var(--green);
 }
 
-h1 {
+h1, h2 {
     text-align: center;
 }
 
@@ -37,11 +37,15 @@ h1 {
     background-color: var(--pastelGreen);
 }
 
-.page h1 {
+.page h2 {
     background-color: var(--pastelBlue);
 }
 
 #input {
     display: flex;
     justify-content: center;
+}
+
+#input input, #input button {
+    margin: 6px 3px 0px 3px;
 }
