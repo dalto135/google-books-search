@@ -1,7 +1,16 @@
 import React from 'react';
-import SearchedBook from '../components/searchedBook';
+import SearchedBooks from '../components/SearchedBooks';
 
 function Search() {
+  let input = 'let input';
+  function myChangeHandler(event) {
+    input = event.target.value;
+    // console.log('event.target.value');
+    // console.log(event.target.value);
+    console.log('input change');
+    console.log(input);
+}
+
   return (
     <div className='page'>
 
@@ -10,12 +19,11 @@ function Search() {
         <div className='searchBooks'>
 
             <div id='input'>
-                <input id='inputField'></input>
+                <input id='inputField' onChange={myChangeHandler}></input>
                 <button id='inputButton'>Search</button>
             </div>
 
-            <SearchedBook/>
-            <SearchedBook/>
+            <SearchedBooks input={input}/>
 
         </div>
         
