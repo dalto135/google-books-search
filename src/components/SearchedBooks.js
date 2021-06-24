@@ -1,49 +1,105 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import Book from './Book';
+import axios from "axios";
 
-function searchedBooks({input}) {
-    console.log('input');
+function SearchedBooks({input}) {
+    console.log('input1');
     console.log(input);
 
 
-    let searchString = 'mindfulness';
+    // let searchString = 'mindfulness';
     // searchString = input;  
-    let requestUrl = `https://www.googleapis.com/books/v1/volumes?q=${searchString}&key=AIzaSyA7dlRqQYZa0vP9rNnZSTcNJN96Akj8BL0`;
+    let requestUrl = `https://www.googleapis.com/books/v1/volumes?q=${input}&key=AIzaSyA7dlRqQYZa0vP9rNnZSTcNJN96Akj8BL0`;
+    // let data = axios.get(requestUrl);
+    console.log('data');
+    // console.log(data.data.results);
+
+
+    const [results, setResults] = useState([]);
+
+
+    useEffect(() => {
+      axios.get(requestUrl)
+            .then(res => {
+                setResults(res.data.items);
+            })            
+            .catch(err => console.log(err.message));
+    }, [requestUrl])
+    console.log('results');
+    console.log(results);
+
     let booksArray = [];
 
-    fetch(requestUrl)
-        .then(function(response) {
-            return response.json();
-        })
-        .then(function(data) {
-          console.log(data);
+    results.forEach(book => {
 
-          data.items.forEach(element => {
-           
-            let addImage = '';
-            if (element.volumeInfo.imageLinks) {
-              addImage = element.volumeInfo.imageLinks.thumbnail;
-            }
-            else {
-              addImage = 'none';
-            }
+      //Set title variable
+      let addTitle = '';
+      if (book.volumeInfo.title) {
+        addTitle = book.volumeInfo.title;
+      }
+      else {
+        addTitle = 'No title';
+      }
 
-            booksArray.push({
-              title: element.volumeInfo.title,
-              authors: element.volumeInfo.authors,
-              description: element.volumeInfo.description,
-              image: addImage,
-              link: element.volumeInfo.infoLink
-            });
-          });
-          console.log(booksArray);
-        })
-        .catch(function(err) {
-          console.log(err.message);
-        });
+      //Set authors variable
+      let addAuthors = [];
+      if (book.volumeInfo.authors) {
+        addAuthors = book.volumeInfo.authors;
+      }
+      else {
+        addAuthors = ['None'];
+      }
+
+      //Set description variable
+      let addDescription = '';
+      if (book.volumeInfo.description) {
+        addDescription = book.volumeInfo.description;
+      }
+      else {
+        addDescription = 'None';
+      }
+
+      //Set image variable
+      let addImage = '';
+      if (book.volumeInfo.imageLinks) {
+        addImage = book.volumeInfo.imageLinks.thumbnail;
+      }
+      else {
+        addImage = 'None';
+      }
+
+      //Set link variable
+      let addLink = '';
+      if (book.volumeInfo.infoLink) {
+        addLink = book.volumeInfo.infoLink;
+      }
+      else {
+        addLink = 'None';
+      }
+
+      booksArray.push({
+        title: addTitle,
+        authors: addAuthors,
+        description: addDescription,
+        image: addImage,
+        link: addLink
+      })
+    })
+        
+    console.log('booksArray');
+    console.log(booksArray);
 
   return (
-    <p>Searched Book</p>
+    <div className='searchedbooks'>
+      {booksArray.map(book => (
+        <div className='book' key={Math.random()}>
+                  <Book title={book.title} authors={book.authors} description={book.description} image={book.image} link={book.link}/>
+
+        </div>
+      ))}
+    </div>
+    
   );
 }
 
-export default searchedBooks;
+export default SearchedBooks;

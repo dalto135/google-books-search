@@ -1,15 +1,16 @@
 import React from 'react';
 import SearchedBooks from '../components/SearchedBooks';
+import { Link } from 'react-router-dom';
+let input = 'mindfulness';
 
 function Search() {
-  let input = 'let input';
+  
+  
   function myChangeHandler(event) {
-    input = event.target.value;
-    // console.log('event.target.value');
-    // console.log(event.target.value);
-    console.log('input change');
-    console.log(input);
-}
+      input = event.target.value;
+      console.log('input change');
+      console.log(input);
+  }
 
   return (
     <div className='page'>
@@ -20,7 +21,7 @@ function Search() {
 
             <div id='input'>
                 <input id='inputField' onChange={myChangeHandler}></input>
-                <button id='inputButton'>Search</button>
+                <Link to='/'>Search</Link>
             </div>
 
             <SearchedBooks input={input}/>
