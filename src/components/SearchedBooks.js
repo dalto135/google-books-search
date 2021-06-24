@@ -6,17 +6,9 @@ function SearchedBooks({input}) {
     console.log('input1');
     console.log(input);
 
-
-    // let searchString = 'mindfulness';
-    // searchString = input;  
     let requestUrl = `https://www.googleapis.com/books/v1/volumes?q=${input}&key=AIzaSyA7dlRqQYZa0vP9rNnZSTcNJN96Akj8BL0`;
-    // let data = axios.get(requestUrl);
-    console.log('data');
-    // console.log(data.data.results);
-
 
     const [results, setResults] = useState([]);
-
 
     useEffect(() => {
       axios.get(requestUrl)
@@ -91,12 +83,13 @@ function SearchedBooks({input}) {
 
   return (
     <div className='searchedbooks'>
+
       {booksArray.map(book => (
         <div className='book' key={Math.random()}>
-                  <Book title={book.title} authors={book.authors} description={book.description} image={book.image} link={book.link}/>
-
+          <Book title={book.title} authors={book.authors} description={book.description} image={book.image} link={book.link}/>
         </div>
       ))}
+
     </div>
     
   );

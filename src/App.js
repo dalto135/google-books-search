@@ -5,6 +5,7 @@ import { HashRouter as Router, Route } from 'react-router-dom';
 import Header from './components/header';
 import Search from './pages/search';
 import Saved from './pages/saved';
+// import Book from './pages/Book';
 
 function App() {
   // const [results, setResults] = useState([]);
@@ -19,7 +20,7 @@ function App() {
   //   }, [])
 
     // console.log(results);
-    
+
     // let searchString = 'mindfulness';
     // let requestUrl = `https://www.googleapis.com/books/v1/volumes?q=${searchString}&key=AIzaSyA7dlRqQYZa0vP9rNnZSTcNJN96Akj8BL0`;
     // let booksArray = [];
@@ -60,6 +61,7 @@ function App() {
       <Header/>
       <Route exact path='/' component={Search}/>
       <Route exact path='/saved' component={Saved}/>
+      {/* <Route exact path='/book' component={Book}/> */}
     </Router>
   );
 }
