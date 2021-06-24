@@ -18,8 +18,6 @@ const bookSchema = new Schema({
     link: {
         type: String,
     }
-    //AIzaSyA7dlRqQYZa0vP9rNnZSTcNJN96Akj8BL0
-    //https://www.googleapis.com/books/v1/volumes?q=search+terms
         
 });
 
