@@ -3,7 +3,7 @@ const Book = require('../models/Book');
 
 //Retrieve information of all Books
 router.get('/api/books', (req, res) => {
-    Book.aggregate([],
+    Book.aggregate({},
 
     function(err, result) {
       if (err) {
@@ -44,9 +44,7 @@ router.delete('/api/books/:id', (req, res) => {
 
 //Retrieve information of all Books with the calculated total duration of each Book
 router.get('*', (req, res) => {
-  Book.aggregate([{$addFields: {
-    totalDuration: {$sum: "$exercises.duration"},
-  }}],
+  Book.aggregate([],
 
     function(err, result) {
       if (err) {

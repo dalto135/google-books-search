@@ -1,8 +1,12 @@
 const router = require('express').Router();
 const path = require('path');
 
-router.get('/book', function(req, res) {
-    res.sendFile(path.join(__dirname, '../../public/index.html'));
+router.get('*', function(req, res) {
+    res.sendFile(path.join(__dirname, '../../build/index.html'));
 });
 
 module.exports = router;
+
+
+
+// export default htmlRoutes;
