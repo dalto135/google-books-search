@@ -57,7 +57,7 @@ function SearchedBooks({input}) {
         addImage = book.volumeInfo.imageLinks.thumbnail;
       }
       else {
-        addImage = 'None';
+        addImage = 'Image unavailable';
       }
 
       //Set link variable

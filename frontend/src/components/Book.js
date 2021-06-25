@@ -13,8 +13,11 @@ function Book({title, authors, description, image, link}) {
                 <p key={Math.random()}>{author}</p>
             )}
             <p>Description: {description}</p>
-            <a href={link} target='_blank' rel='noreferrer'>View</a>
-            <button className='favorite'>Add to favorites</button>
+            <div className='bookclicks'>
+              <a href={link} target='_blank' rel='noreferrer'>View</a>
+              <button className='favorite'>Add to saved</button>
+            </div>
+            
         </div>
     </div>
     

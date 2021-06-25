@@ -2,17 +2,14 @@ const router = require('express').Router();
 const Book = require('../models/Book');
 
 //Retrieve information of all Books
-router.get('/api/books', (req, res) => {
-    Book.aggregate({},
-
-    function(err, result) {
-      if (err) {
-        res.send(err.message);
-      } else {
-        res.json(result);
-      }
-    }
-  )
+router.get("/api/books", (req, res) => {
+  Book.find({})
+    .then(dbBook => {
+      res.json(dbBook);
+    })
+    .catch(err => {
+      res.status(404).json(err.message);
+    });
 });
 
 //Create new Book
@@ -26,25 +23,9 @@ router.post('/api/books', (req, res) => {
     });
 });
 
-//Add exercise to existing book
+// Delete book by id
 router.delete('/api/books/:id', (req, res) => {
-  Book.destroy({_id: req.params.id}, {$push: {exercises: [req.body]}},
-
-    function(err, result) {
-      if (err) {
-        res.send(err.message);
-      } else {
-        res.json(result);
-      }
-    }
-  )
-});
-
-
-
-//Retrieve information of all Books with the calculated total duration of each Book
-router.get('*', (req, res) => {
-  Book.aggregate([],
+  Book.remove({_id: req.params.id},
 
     function(err, result) {
       if (err) {

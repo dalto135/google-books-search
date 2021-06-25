@@ -1,7 +1,7 @@
 import React from 'react';
 import SavedBook from '../components/savedBook';
 // import APICAll from '../routes/apiCalls';
-import API from '../api';
+// import API from '../api';
 
 
 // async function hello() {
@@ -16,26 +16,26 @@ import API from '../api';
 // // }
 // }
 
-fetch("/api/books", {
-  method: "GET",
-  body: JSON.stringify(),
-  headers: {
-    Accept: "application/json, text/plain, */*",
-    "Content-Type": "application/json"
-  },
-})
-.then(response => {
-  console.log('response');
-  console.log(response);
-  return response.json();
-})
-.then(data => {
-  console.log('data');
-  console.log(data);
-})
-.catch(err => {
-  console.log(err.message);
-});
+// fetch("/api/books", {
+//   method: "GET",
+//   body: JSON.stringify(),
+//   headers: {
+//     Accept: "application/json, text/plain, */*",
+//     "Content-Type": "application/json"
+//   },
+// })
+// .then(response => {
+//   console.log('response');
+//   console.log(response);
+//   return response.json();
+// })
+// .then(data => {
+//   console.log('data');
+//   console.log(data);
+// })
+// .catch(err => {
+//   console.log(err.message);
+// });
 
 
 
@@ -46,8 +46,8 @@ function Saved() {
     <div className='page'>
         <h2>Saved</h2>
         <div className='books'>
-            <SavedBook/>
-            <SavedBook/>
+            <SavedBook title={'title1'} authors={['authors1']} description={'description1'} image={'image1'} link={'link1'}/>
+            <SavedBook title={'title2'} authors={['authors2']} description={'description2'} image={'image2'} link={'link2'}/>
         </div>
         
     </div>
