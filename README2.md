@@ -3,16 +3,15 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 ## Table of Contents
-[Links](#Links)  
+[Link](#Link)  
 [Technologies](#Technologies)  
 [Description](#Description)  
 [Screenshot](#Screenshot)  
 [License](#License)  
 [Contact](#Contact)
 
-## Links
-https://sheltered-ocean-65878.herokuapp.com/  
-https://dalto135.github.io/portfolio/
+## Link
+https://sheltered-ocean-65878.herokuapp.com/
 
 ## Technologies
 HTML, CSS, Javascript, MERN, React.js, MongoDB, Mongoose
