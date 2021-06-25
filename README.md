@@ -20,7 +20,7 @@ HTML, CSS, Javascript, MERN, React.js, MongoDB, Mongoose
 A react webpage that uses the Google Books API to provide a search engine for all of the books Google has made available. Users can make searches to access Google Books and add books to their favorites.
 
 ## Screenshot
-![Screenshot 1](src/assets/images/screenshot1.png)
+![Screenshot 1](frontend/src/assets/images/screenshot1.png)
 
 ## License
 MIT
