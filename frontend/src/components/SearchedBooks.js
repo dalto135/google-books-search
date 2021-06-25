@@ -3,7 +3,7 @@ import Book from './Book';
 import axios from "axios";
 
 function SearchedBooks({input}) {
-    console.log('input1');
+    console.log('input');
     console.log(input);
 
     let requestUrl = `https://www.googleapis.com/books/v1/volumes?q=${input}&key=AIzaSyA7dlRqQYZa0vP9rNnZSTcNJN96Akj8BL0`;

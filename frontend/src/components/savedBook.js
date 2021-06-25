@@ -7,8 +7,8 @@ async function getBooks() {
     console.log('res');
     console.log(res);
   } catch (err) {
-    console.log(err.message);
     console.log('err.message');
+    console.log(err.message);
   }
   console.log('past catch');
   const json = JSON.stringify(res);

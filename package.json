@@ -20,6 +20,7 @@
     "concurrently": "^6.2.0"
   },
   "dependencies": {
-    "mongoose": "^5.12.14"
+    "mongoose": "^5.12.14",
+    "react-scripts": "^4.0.3"
   }
 }
