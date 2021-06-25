@@ -1,46 +1,22 @@
 {
   "name": "google-books-search",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "axios": "^0.21.1",
-    "express": "^4.17.1",
-    "express-router": "0.0.1",
-    "mongoose": "^5.12.14",
-    "morgan": "^1.10.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.3",
-    "router": "^1.3.5",
-    "web-vitals": "^1.0.1"
-  },
+  "version": "1.0.0",
+  "description": "[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)",
+  "main": "index.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "seed": "node src/seeders/seed.js"
+    "start": "concurrently \"cd backend && npm run watch\" \"cd frontend && npm start\""
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dalto135/google-books-search.git"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dalto135/google-books-search/issues"
+  },
+  "homepage": "https://github.com/dalto135/google-books-search#readme",
+  "devDependencies": {
+    "concurrently": "^6.2.0"
   }
 }

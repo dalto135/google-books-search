@@ -15,7 +15,7 @@ router.get('/api/books', (req, res) => {
   )
 });
 
-//Create new Boo
+//Create new Book
 router.post('/api/books', (req, res) => {
     Book.create(req.body)
     .then(book => {
