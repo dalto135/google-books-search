@@ -12,6 +12,7 @@ async function getBooks() {
   }
   console.log('past catch');
   const json = JSON.stringify(res);
+  // const json = res.json();
   console.log('json');
   console.log(json);
 

@@ -46,8 +46,8 @@ function Saved() {
     <div className='page'>
         <h2>Saved</h2>
         <div className='books'>
-            <SavedBook title={'title1'} authors={['authors1']} description={'description1'} image={'image1'} link={'link1'}/>
-            <SavedBook title={'title2'} authors={['authors2']} description={'description2'} image={'image2'} link={'link2'}/>
+            <SavedBook title={'title1'} authors={['authors1']} description={'description1'} image={'Image unavailable'} link={'link1'}/>
+            <SavedBook title={'title2'} authors={['authors2']} description={'description2'} image={'Image unavailable'} link={'link2'}/>
         </div>
         
     </div>
