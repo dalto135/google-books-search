@@ -1,6 +1,9 @@
 {
   "name": "google-books-search",
   "version": "1.0.0",
+  "engines": {
+    "node": "14.16.0"
+  },
   "description": "[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)",
   "main": "index.js",
   "scripts": {
