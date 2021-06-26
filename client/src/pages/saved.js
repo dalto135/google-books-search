@@ -2,7 +2,13 @@ import React from 'react';
 import SavedBook from '../components/savedBook';
 // import APICAll from '../routes/apiCalls';
 // import API from '../api';
-let books;
+let books= [{
+  title: 'title',
+  authors: [],
+  description: 'description',
+  image: 'Image unavailable',
+  link: 'www.google.com'
+}];
 
 getBooks();
 
