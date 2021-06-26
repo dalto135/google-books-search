@@ -7,7 +7,8 @@
   "description": "[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)",
   "main": "index.js",
   "scripts": {
-    "start": "NODE_ENV=production node server.js"
+    "start": "node server.js",
+    "dev": "concurrently \"npm start\" \"cd client && npm start\""
   },
   "repository": {
     "type": "git",

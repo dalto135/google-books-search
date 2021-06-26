@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 if (process.env.NODE_ENV === "production") {
-  app.use(express.static("./client/build"));
+  app.use(express.static(path.join(__dirname, './client/build')));
 }
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/book", {
@@ -24,7 +24,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/book", {
 
 // routes
 app.use(require('./routes/api'));
-// app.use(require('./routes/html'));
+app.use(require('./routes/html'));
 
 app.listen(PORT, () => {
   console.log(`App running on http://localhost:${PORT}`);
