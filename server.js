@@ -25,6 +25,8 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/book", {
 // routes
 app.use(require('./routes/api'));
 app.use(require('./routes/html'));
+// "start": "node server.js",
+// "dev": "concurrently \"npm start\" \"cd client && npm start\""
 
 app.listen(PORT, () => {
   console.log(`App running on http://localhost:${PORT}`);
