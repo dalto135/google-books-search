@@ -12,8 +12,6 @@
 
 ## Link
 https://sheltered-ocean-65878.herokuapp.com/
-<!-- MONGODB_URI -->
-<!-- mongodb+srv://google-books-search:biscuitbill@cluster0.pivmv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority -->
 
 ## Technologies
 HTML, CSS, Javascript, MERN, React.js, MongoDB, Mongoose

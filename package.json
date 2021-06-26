@@ -4,7 +4,8 @@
   "description": "[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently \"cd backend && npm run watch\" \"cd frontend && npm start\""
+    "start": "concurrently \"cd backend && npm run watch\" \"cd frontend && npm start\"",
+    "build": "react-scripts build"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,19 @@
   },
   "dependencies": {
     "mongoose": "^5.12.14",
+    "react": "^17.0.2",
     "react-scripts": "^4.0.3"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
