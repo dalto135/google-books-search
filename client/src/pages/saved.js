@@ -28,7 +28,7 @@ function Saved() {
         <h2>Saved</h2>
         <div className='books'>
             {books?.map(book =>
-              <SavedBook key={book._id} title={book.title} authors={book.authors} description={book.description} image={book.image} link={book.image}/>
+              <SavedBook key={book._id} title={book.title} authors={book.authors} description={book.description} image={book.image} link={book.link}/>
             )}
         </div>
         
