@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import SavedBook from '../components/savedBook';
-// import APICAll from '../routes/apiCalls';
-// import API from '../api';
-
 
 function Saved() {
   const [books, setBooks] = useState([]);
@@ -20,6 +17,19 @@ function Saved() {
     getBooks();
   }, [])
 
+  books.map(book => {
+    let button = document.getElementById(book._id);
+    button?.addEventListener('click', function() {
+
+      fetch(`/api/books/${book._id}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+    })
+  })
+
   console.log('books');
   console.log(books);
 
@@ -28,7 +38,7 @@ function Saved() {
         <h2>Saved</h2>
         <div className='books'>
             {books?.map(book =>
-              <SavedBook key={book._id} title={book.title} authors={book.authors} description={book.description} image={book.image} link={book.link}/>
+              <SavedBook key={book._id} _id={book._id} title={book.title} authors={book.authors} description={book.description} image={book.image} link={book.link}/>
             )}
         </div>
         

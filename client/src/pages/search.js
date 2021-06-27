@@ -1,7 +1,7 @@
 import React from 'react';
 import SearchedBooks from '../components/SearchedBooks';
 import { Link } from 'react-router-dom';
-let input = 'mindfulness';
+let input = 'science';
 
 function Search() {
   

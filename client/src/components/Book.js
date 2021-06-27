@@ -1,6 +1,10 @@
 import React from 'react';
 
-function Book({title, authors, description, image, link}) {
+
+
+
+function Book({_id, title, authors, description, image, link}) {
+
   return (
     <div className='bookdiv'>
         
@@ -14,7 +18,7 @@ function Book({title, authors, description, image, link}) {
             <p>Description: {description}</p>
             <div className='bookclicks'>
               <a href={link} target='_blank' rel='noreferrer'>View</a>
-              <button className='favorite'>Add to saved</button>
+              <button className='addbutton' id={_id}>Add to saved</button>
             </div>
             
         </div>

@@ -24,6 +24,8 @@ function SearchedBooks({input}) {
 
     results.forEach(book => {
 
+      let _id = book.id;
+
       //Set title variable
       let addTitle = '';
       if (book.volumeInfo.title) {
@@ -70,6 +72,7 @@ function SearchedBooks({input}) {
       }
 
       booksArray.push({
+        _id: _id,
         title: addTitle,
         authors: addAuthors,
         description: addDescription,
@@ -81,15 +84,40 @@ function SearchedBooks({input}) {
     console.log('booksArray');
     console.log(booksArray);
 
+    booksArray.map(book => {
+      let button = document.getElementById(book._id);
+      button?.addEventListener('click', function(req, res) {
+        fetch("/api/books", {
+          method: "POST",
+          body: req.body,
+          headers: {
+            Accept: "application/json, text/plain, */*",
+            "Content-Type": "application/json"
+          },
+        })
+        .then(response => {
+          console.log('response');
+          console.log(response);
+          return response.json();
+        })
+        .then(data => {
+          console.log('data');
+          console.log(data);
+        })
+        .catch(err => {
+          console.log(err.message);
+        });
+      })
+    })
+
   return (
     <div className='searchedbooks'>
 
       {booksArray.map(book => (
-        <div className='book' key={Math.random()}>
-          <Book title={book.title} authors={book.authors} description={book.description} image={book.image} link={book.link}/>
+        <div className='book' key={book._id}>
+          <Book _id={book._id} title={book.title} authors={book.authors} description={book.description} image={book.image} link={book.link}/>
         </div>
       ))}
-
     </div>
     
   );

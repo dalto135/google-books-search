@@ -1,8 +1,6 @@
 import React from 'react';
 
-
-
-function savedBook({title, authors, description, image, link}) {
+function savedBook({_id, title, authors, description, image, link}) {
 
   return (
     <div className='bookdiv'>
@@ -17,7 +15,7 @@ function savedBook({title, authors, description, image, link}) {
             <p>Description: {description}</p>
             <div className='favclicks'>
               <a href={link} target='_blank' rel='noreferrer'>View</a>
-              <button className='favorite'>Remove from saved</button>
+              <button className='favorite' id={_id}>Remove from saved</button>
             </div>
             
         </div>
