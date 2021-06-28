@@ -17,8 +17,6 @@ function Saved() {
     getBooks();
   }, [])
 
-  
-
   console.log('books');
   console.log(books);
 
@@ -27,7 +25,7 @@ function Saved() {
         <h2>Saved</h2>
         <div className='books'>
             {books.map(book =>
-              <SavedBook key={book._id} _id={book._id} title={book.title} authors={book.authors} description={book.description} image={book.image} link={book.link}/>
+              <SavedBook key={book._id} book={book} />
             )}
         </div>
         

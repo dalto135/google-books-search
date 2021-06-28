@@ -3,8 +3,7 @@ import React from 'react';
 
 
 
-function Book({_id, title, authors, description, image, link, book}) {
-
+function Book({book}) {
 
   function addFavorite() {
     fetch('/api/books', {
@@ -16,23 +15,20 @@ function Book({_id, title, authors, description, image, link, book}) {
     })
   };
 
-  console.log('book');
-  console.log(book);
-
   return (
     <div className='bookdiv'>
         
-        <img src={image} alt={image}/>
+        <img src={book.image} alt={book.image}/>
         <div className='booktext'>
-            <p>{title}</p>
+            <p>{book.title}</p>
             <p>Author(s):</p>
-            {authors.map(author =>
+            {book.authors.map(author =>
                 <p key={Math.random()}>{author}</p>
             )}
-            <p>Description: {description}</p>
+            <p>Description: {book.description}</p>
             <div className='bookclicks'>
-              <a href={link} target='_blank' rel='noreferrer'>View</a>
-              <button className='addbutton' id={_id} onClick={addFavorite}>Add to saved</button>
+              <a href={book.link} target='_blank' rel='noreferrer'>View</a>
+              <button className='addbutton' id={book._id} onClick={addFavorite}>Add to saved</button>
             </div>
             
         </div>

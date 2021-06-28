@@ -115,7 +115,7 @@ function SearchedBooks({input}) {
 
       {booksArray.map(book => (
         <div className='book' key={book._id}>
-          <Book _id={book._id} title={book.title} authors={book.authors} description={book.description} image={book.image} link={book.link} book={book}/>
+          <Book book={book}/>
         </div>
       ))}
     </div>
