@@ -27,7 +27,7 @@ function savedBook({_id, title, authors, description, image, link}) {
     <p key={Math.random()}>{author}</p>
   )
 
-  console.log(authorsList);
+  // console.log(authorsList);
 
   bookText.innerHTML += (authorsList);
 
