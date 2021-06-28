@@ -84,32 +84,6 @@ function SearchedBooks({input}) {
     console.log('booksArray');
     console.log(booksArray);
 
-    booksArray.map(book => {
-      let button = document.getElementById(book._id);
-      button?.addEventListener('click', function(req, res) {
-        fetch("/api/books", {
-          method: "POST",
-          body: req.body,
-          headers: {
-            Accept: "application/json, text/plain, */*",
-            "Content-Type": "application/json"
-          },
-        })
-        .then(response => {
-          console.log('response');
-          console.log(response);
-          return response.json();
-        })
-        .then(data => {
-          console.log('data');
-          console.log(data);
-        })
-        .catch(err => {
-          console.log(err.message);
-        });
-      })
-    })
-
   return (
     <div className='searchedbooks'>
 

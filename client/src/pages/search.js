@@ -5,7 +5,6 @@ let input = 'science';
 
 function Search() {
   
-  
   function myChangeHandler(event) {
       input = event.target.value;
       console.log('input change');
@@ -23,7 +22,6 @@ function Search() {
                 <input id='inputField' onChange={myChangeHandler}></input>
                 <Link to='/'>Search</Link>
             </div>
-
             <SearchedBooks input={input}/>
 
         </div>
