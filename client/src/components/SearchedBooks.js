@@ -87,8 +87,8 @@ function SearchedBooks({input}) {
   return (
     <div className='searchedbooks'>
 
-      {booksArray.map(book => (
-        <div className='book' key={book._id}>
+      {booksArray.map((book, i) => (
+        <div className='book' key={i}>
           <Book book={book}/>
         </div>
       ))}

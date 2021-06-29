@@ -18,8 +18,8 @@ function savedBook({book}) {
         <div className='booktext'>
             <p>{book.title}</p>
             <p>Author(s):</p>
-            {book.authors.map(author =>
-                <p key={Math.random()}>{author}</p>
+            {book.authors.map((author, i) =>
+                <p key={i}>{author}</p>
             )}
             <p>Description: {book.description}</p>
             <div className='favclicks'>
