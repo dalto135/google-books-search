@@ -8,7 +8,9 @@ function savedBook({book}) {
         headers: {
           'Content-Type': 'application/json',
         },
-      });
+      })
+      .then(document.location.reload())
+      .catch(err => console.log(err.message));
     }
 
   return (
